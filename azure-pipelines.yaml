@@ -1,0 +1,11 @@
+trigger:
+  branches:
+    include:
+    - main
+
+jobs:
+- job: Build
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+    - bash: cat /proc/cgroups
