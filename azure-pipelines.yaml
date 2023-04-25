@@ -9,3 +9,4 @@ jobs:
     vmImage: ubuntu-latest
   steps:
     - bash: cat /proc/cgroups
+    - bash: cat /sys/fs/cgroup/cgroup.controllers
