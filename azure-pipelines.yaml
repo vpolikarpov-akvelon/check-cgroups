@@ -8,9 +8,9 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   steps:
-    - bash: cat /etc/cgconfig.conf
-    - bash: cat /etc/cgrules.conf
-#     - bash: cat /proc/cgroups
-#     - bash: cat /sys/fs/cgroup/cgroup.controllers
-    - bash: cat /etc/default/grub.d/40-azuredevops.cfg
-    - bash: /etc/docker/daemon.json
+    - task: Bash@3
+      displayName: 'Run script'
+      inputs:
+        targetType: filePath
+        filePath: script.sh
+        arguments: arg1 arg2 "arg 3" arg\ 4
